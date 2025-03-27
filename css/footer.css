@@ -1,0 +1,35 @@
+
+  /* Footer */
+  .footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .footer .social-icons,
+  .footer .footer-links {
+    margin: 1rem 0;
+  }
+
+  .footer-links a {
+    color: #ffd700; /* Gold */
+    margin: 0 1rem;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #fff;
+    transform: scale(1.05);
+  }
+
+  .footer .social-icons a {
+    color: #ffd700;
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+  }
+
+  .footer .social-icons a:hover {
+    transform: scale(1.1);
+  }

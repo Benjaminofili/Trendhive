@@ -1,0 +1,68 @@
+  /* Spacing for fixed navbar */
+  main {
+    padding-top: 80px;
+  }
+  
+  /* hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .hamburger .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+  }
+
+  /* Breadcrumb Section */
+  .breadcrumb {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  .breadcrumb a {
+    color: #6a0dad;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 6rem 1rem 4rem; /* extra top padding due to fixed navbar */
+    background: linear-gradient(
+      135deg,
+      #ffc1cc,
+      #6a0dad
+    ); /* Soft Pink to Deep Purple */
+    color: #fff;
+    animation: slideIn 1s ease-out;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .cta-button {
+    background: #ffd700; /* Gold */
+    color: #6a0dad;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  .cta-button:hover {
+    background: #e6c200;
+    transform: scale(1.05);
+  }

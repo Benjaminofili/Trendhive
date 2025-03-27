@@ -1,0 +1,75 @@
+/* Navbar */
+.navbar {
+  background: #6a0dad; /* Deep Purple */
+  color: #fff;
+  padding: 0.8rem 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+.navbar .container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+.nav-links li {
+  margin-left: 1.5rem;
+  animation: fadeIn 0.5s ease forwards;
+}
+.nav-links li a {
+  font-size: 0.9rem;
+  color: #fff;
+  padding: 0.5rem;
+}
+.nav-links li a:hover {
+  color: #ffd700;
+  border-radius: 5px;
+  transition: color 0.3s ease;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Align directly below parent */
+  left: 0;
+  list-style: none;
+  background: #5a0990; /* Darker Purple */
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: none; /* Initially hidden */
+}
+
+.dropdown-menu .dropdown-item {
+  background-color: #5a0990;
+  padding: 0.5rem 1rem;
+  color: #fff; /* Gold */
+}
+
+.dropdown-menu .dropdown-item:focus,
+.dropdown-menu .dropdown-item:active {
+  background: #ffd700; /* Gold Background */
+  color: #6a0dad; /* Purple Text */
+}
+
+.dropdown-menu.show {
+  display: block; /* Display when toggled */
+}
+
+.nav-item .dropdown .dropdown-menu {
+  top: 0;
+  left: 100%; /* Align nested dropdown to the right */
+  background: #6a0dad;
+}
