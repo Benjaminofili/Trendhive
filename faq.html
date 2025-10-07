@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - TrendHive</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="vary.css" />
+    <style>
+      .faq-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+        background: var(--clr-neutral);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+      }
+
+      .faq-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .faq-header h1 {
+        font-size: var(--fs-heading-lg);
+        color: var(--clr-primary);
+      }
+
+      .faq-header p {
+        font-size: var(--fs-body-lg);
+        color: var(--clr-text-light);
+      }
+
+      .accordion-button {
+        background: var(--clr-white);
+        color: var(--clr-primary);
+        font-weight: bold;
+        border: none;
+        transition: var(--transition);
+      }
+
+      .accordion-button:hover {
+        background: var(--clr-primary);
+        color: var(--clr-white);
+      }
+
+      .accordion-button:not(.collapsed) {
+        background: var(--clr-primary);
+        color: var(--clr-white);
+      }
+
+      .accordion-body {
+        background: var(--clr-neutral);
+        color: var(--clr-text);
+        border-top: 1px solid var(--clr-border);
+      }
+
+      .dark-theme .accordion-button {
+        background: var(--clr-neutral);
+        color: var(--clr-text);
+      }
+
+      .dark-theme .accordion-button:not(.collapsed) {
+        background: var(--clr-primary-dark);
+        color: var(--clr-white);
+      }
+
+      .dark-theme .accordion-body {
+        background: var(--clr-neutral);
+        color: var(--clr-text-light);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+          <!-- Brand with translation -->
+          <a
+            class="navbar-brand"
+            href="home.html"
+            id="brandName"
+            data-translate="brandName"
+          >
+            TrendHive
+          </a>
+    
+          <!-- Hamburger Menu -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <!-- Collapsible Content -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navigation Links with translation -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  href="home.html"
+                  id="navHome"
+                  data-translate="navHome"
+                  >Home</a
+                >
+              </li>
+    
+              <!-- Shop Dropdown -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  id="navShop"
+                  data-translate="navShop"
+                >
+                  Shop
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="product-catalog.html"
+                      id="dropdownCategories"
+                      data-translate="dropdownCategories"
+                      >Categories</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="wishlist.html"
+                      id="dropdownWishlist"
+                      data-translate="dropdownWishlist"
+                      >Wishlist</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="offers.html"
+                      id="dropdownOffers"
+                      data-translate="dropdownOffers"
+                      >Offers</a
+                    >
+                  </li>
+                </ul>
+              </li>
+    
+              <!-- Explore Dropdown -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  id="navExplore"
+                  data-translate="navExplore"
+                >
+                  Explore
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="gallery.html"
+                      id="dropdownGallery"
+                      data-translate="dropdownGallery"
+                      >Gallery</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="blog.html"
+                      id="dropdownBlog"
+                      data-translate="dropdownBlog"
+                      >Blog</a
+                    >
+                  </li>
+                </ul>
+              </li>
+    
+              <!-- Info Dropdown -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  id="navInfo"
+                  data-translate="navInfo"
+                >
+                  Info
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="about.html"
+                      id="dropdownAbout"
+                      data-translate="dropdownAbout"
+                      >About Us</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="contact.html"
+                      id="dropdownContact"
+                      data-translate="dropdownContact"
+                      >Contact Us</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#faq"
+                      id="dropdownFAQ"
+                      data-translate="dropdownFAQ"
+                      >FAQ</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+    
+            <!-- Right-aligned Items -->
+            <div class="d-flex align-items-center gap-3 flex-wrap">
+              <!-- Search Form -->
+              <form
+                class="d-flex order-1"
+                role="search"
+                style="min-width: 150px; flex-grow: 1"
+              >
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  id="searchInput"
+                />
+                <button class="btn" type="submit" id="searchButton">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+    
+              <!-- Right-aligned Items -->
+              <div
+                class="d-flex align-items-center gap-2 order-3 order-lg-2 mt-2 mt-sm-0"
+              >
+                <!-- Language Selector -->
+                <select
+                  class="form-select custom-language-select"
+                  id="languageSelect"
+                >
+                  <option value="en">EN</option>
+                  <option value="es">ES</option>
+                  <option value="fr">FR</option>
+                </select>
+    
+                <!-- Theme Toggle -->
+                <img
+                  src="img/icons/moon2.png"
+                  alt="Theme toggle"
+                  id="icon"
+                  class="theme-toggle"
+                />
+    
+                <a href="cart.html" class="position-relative"
+                style="color: var(--clr-white); text-decoration: none;">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                  style="
+                    background: var(--clr-accent);
+                    color: var(--clr-primary);
+                    font-size: 0.7rem;
+                    padding: 0.25rem 0.4rem;
+                  ">
+                  0
+                </span>
+              </a>
+    
+                <!-- Profile Icon -->
+                <a href="profile.html" class="user-profile">
+                  <img
+                    src="img/icons/profile.png"
+                    alt="Profile"
+                    class="profile-icon"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <main>
+        <!-- BREADCRUMB  -->
+        <nav aria-label="breadcrumb" class="breadcrumb-container">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="home.html" data-translate="breadcrumbHome">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page" data-translate="breadcrumbFAQ">FAQ</li>
+            </ol>
+          </nav>
+    
+      <!-- FAQ Section -->
+      <div class="faq-container">
+        <div class="faq-header">
+          <h1>Frequently Asked Questions</h1>
+          <p>Find answers to the most common questions about TrendHive.</p>
+        </div>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq1">
+              <button
+                …
+                aria-controls="collapse1"
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse1"
+              aria-expanded="true"
+              aria-controls="collapse1"
+            >
+              What is TrendHive?
+            </button>
+          </h2>
+          <div
+            id="collapse1"
+            class="accordion-collapse collapse show"
+            aria-labelledby="faq1"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              TrendHive is a fashion-forward platform offering curated
+              collections of apparel, accessories, and more. We aim to redefine
+              fashion with innovation and sustainability.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq2">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse2"
+              aria-expanded="false"
+              aria-controls="collapse2"
+            >
+              How can I track my order?
+            </button>
+          </h2>
+          <div
+            id="collapse2"
+            class="accordion-collapse collapse"
+            aria-labelledby="faq2"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              You can track your order by logging into your account and
+              navigating to the "Order History" section. Alternatively, use the
+              tracking link provided in your confirmation email.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq3">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3"
+              aria-expanded="false"
+              aria-controls="collapse3"
+            >
+              What is your return policy?
+            </button>
+          </h2>
+          <div
+            id="collapse3"
+            class="accordion-collapse collapse"
+            aria-labelledby="faq3"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              We offer a 30-day return policy for unused items in their
+              original packaging. Visit our <a href="returns.html">Returns &
+              Refunds</a> page for more details.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq4">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse4"
+              aria-expanded="false"
+              aria-controls="collapse4"
+            >
+              How do I contact customer support?
+            </button>
+          </h2>
+          <div
+            id="collapse4"
+            class="accordion-collapse collapse"
+            aria-labelledby="faq4"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              You can reach our customer support team via email at
+              <a href="mailto:support@trendhive.com">support@trendhive.com</a>
+              or call us at +1 (123) 456-7890. We’re available Monday to Friday,
+              9 AM to 6 PM.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="faq5">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse5"
+              aria-expanded="false"
+              aria-controls="collapse5"
+            >
+              Do you offer international shipping?
+            </button>
+          </h2>
+          <div
+            id="collapse5"
+            class="accordion-collapse collapse"
+            aria-labelledby="faq5"
+            data-bs-parent="#faqAccordion"
+          >
+            <div class="accordion-body">
+              Yes, we ship internationally! Shipping costs and delivery times
+              vary by location. Check our <a href="shipping.html">Shipping
+              Info</a> page for more details.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+        <div class="container">
+          <div class="row">
+            <!-- About Section -->
+            <div class="col-md-4">
+              <h5 class="text-uppercase mb-4">About TrendHive</h5>
+              <p>
+                TrendHive is your go-to destination for fashion-forward styles and timeless elegance. We redefine fashion with innovation and sustainability.
+              </p>
+              <p>&copy; 2023 TrendHive. All Rights Reserved.</p>
+            </div>
+      
+            <!-- Quick Links -->
+            <div class="col-md-2">
+              <h5 class="text-uppercase mb-4">Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="#faq" class="text-light text-decoration-none">FAQ</a></li>
+                <li><a href="#contact" class="text-light text-decoration-none">Contact Us</a></li>
+                <li><a href="#about" class="text-light text-decoration-none">About Us</a></li>
+                <li><a href="#blog" class="text-light text-decoration-none">Blog</a></li>
+              </ul>
+            </div>
+      
+            <!-- Customer Support -->
+            <div class="col-md-3">
+              <h5 class="text-uppercase mb-4">Customer Support</h5>
+              <ul class="list-unstyled">
+                <li><a href="terms.html" class="text-light text-decoration-none">Terms & Conditions</a></li>
+                <li><a href="privacy.html" class="text-light text-decoration-none">Privacy Policy</a></li>
+                <li><a href="returns.html" class="text-light text-decoration-none">Returns & Refunds</a></li>
+                <li><a href="shipping.html" class="text-light text-decoration-none">Shipping Info</a></li>
+              </ul>
+            </div>
+      
+            <!-- Newsletter Signup -->
+            <div class="col-md-3">
+              <h5 class="text-uppercase mb-4">Stay Connected</h5>
+              <form>
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter your email"
+                    aria-label="Email"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+              </form>
+              <div class="social-icons mt-4">
+                <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-light me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-light"><i class="fab fa-linkedin fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4 text-light" />
+          <div class="text-center">
+            <p class="mb-0">Designed with ❤️ by TrendHive Team</p>
+          </div>
+        </div>
+      </footer>
+      <script src="script.js" defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+  </html>

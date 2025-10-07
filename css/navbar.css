@@ -1,11 +1,19 @@
 /* Navbar */
+
+#icon{
+  background: linear-gradient(180deg, #fff, #a9bcd0);
+  width: 30px;
+  cursor: pointer;
+}
+
+
 .navbar {
   background: #6a0dad; /* Deep Purple */
   color: #fff;
   padding: 0.8rem 1rem;
   position: fixed;
   width: 100%;
-  z-index: 1000;
+  z-index: 400;
   top: 0;
   left: 0;
 }
@@ -40,6 +48,10 @@
   transition: color 0.3s ease;
 }
 
+.navbar-nav .nav-item {
+  position: relative; /* Ensure each nav item is a positioning context */
+}
+
 .dropdown-menu {
   position: absolute;
   top: 100%; /* Align directly below parent */
@@ -50,6 +62,11 @@
   border-radius: 5px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: none; /* Initially hidden */
+  z-index: 100;
+}
+
+.dropdown-menu.show {
+  display: block; /* Show dropdown when triggered */
 }
 
 .dropdown-menu .dropdown-item {

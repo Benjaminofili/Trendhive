@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Catalog</title>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for social icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-<YOUR-INTEGRITY-HASH>"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  <link rel="stylesheet" href="product.css" />
+</head>
+<body>
+  <!-- Navbar (reuse your home page navbar) -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <!-- Brand with translation -->
+      <a
+        class="navbar-brand"
+        href="home.html"
+        id="brandName"
+        data-translate="brandName"
+      >
+        TrendHive
+      </a>
+
+      <!-- Hamburger Menu -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible Content -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navigation Links with translation -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              href="home.html"
+              id="navHome"
+              data-translate="navHome"
+              >Home</a
+            >
+          </li>
+
+          <!-- Shop Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              data-bs-toggle="dropdown"
+              id="navShop"
+              data-translate="navShop"
+            >
+              Shop
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="product-catalog.html"
+                  id="dropdownCategories"
+                  data-translate="dropdownCategories"
+                  >Categories</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="wishlist.html"
+                  id="dropdownWishlist"
+                  data-translate="dropdownWishlist"
+                  >Wishlist</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="offers.html"
+                  id="dropdownOffers"
+                  data-translate="dropdownOffers"
+                  >Offers</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- Explore Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              data-bs-toggle="dropdown"
+              id="navExplore"
+              data-translate="navExplore"
+            >
+              Explore
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="gallery.html"
+                  id="dropdownGallery"
+                  data-translate="dropdownGallery"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="blog.html"
+                  id="dropdownBlog"
+                  data-translate="dropdownBlog"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <!-- Info Dropdown -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              data-bs-toggle="dropdown"
+              id="navInfo"
+              data-translate="navInfo"
+            >
+              Info
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="about.html"
+                  id="dropdownAbout"
+                  data-translate="dropdownAbout"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="contact.html"
+                  id="dropdownContact"
+                  data-translate="dropdownContact"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#faq"
+                  id="dropdownFAQ"
+                  data-translate="dropdownFAQ"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right-aligned Items -->
+        <div class="d-flex align-items-center gap-3 flex-wrap">
+          <!-- Search Form -->
+          <form
+            class="d-flex order-1"
+            role="search"
+            style="min-width: 150px; flex-grow: 1"
+          >
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              id="navbarSearchInput"
+            />
+            <button class="btn" type="submit" id="searchButton">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+
+          <!-- Right-aligned Items -->
+          <div
+            class="d-flex align-items-center gap-2 order-3 order-lg-2 mt-2 mt-sm-0"
+          >
+            <!-- Language Selector -->
+            <select
+              class="form-select custom-language-select"
+              id="languageSelect"
+            >
+              <option value="en">EN</option>
+              <option value="es">ES</option>
+              <option value="fr">FR</option>
+            </select>
+
+            <!-- Theme Toggle -->
+            <img
+              src="img/icons/moon2.png"
+              alt="Theme toggle"
+              id="icon"
+              class="theme-toggle"
+            />
+
+            <a href="cart.html" class="position-relative"
+            style="color: var(--clr-white); text-decoration: none;">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+              style="
+                background: var(--clr-accent);
+                color: var(--clr-primary);
+                font-size: 0.7rem;
+                padding: 0.25rem 0.4rem;
+              ">
+              0
+            </span>
+          </a>
+
+            <!-- Profile Icon -->
+            <a href="profile.html" class="user-profile">
+              <img
+                src="img/icons/profile.png"
+                alt="Profile"
+                class="profile-icon"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <main>
+    <!-- BREADCRUMB  -->
+    <nav aria-label="breadcrumb" class="breadcrumb-container">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="home.html" data-translate="breadcrumbHome">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="product-catalog.html" data-translate="breadcrumbShop">Shop</a>
+        </li>
+      </ol>
+    </nav>
+
+  <!-- Product Catalog Grid -->
+  <section class="catalog-section">
+    <h2 class="section-heading" data-translate="sectionCatalog">Product Catalog</h2>
+    <section class="categories-section">
+      <button data-translate="categoryAll" onclick="filterMajorCategory('all')">All</button>
+      <button data-translate="categoryApparel" onclick="filterMajorCategory('Apparel')">Apparel</button>
+      <button data-translate="categoryFootwear" onclick="filterMajorCategory('Footwear')">Footwear</button>
+      <button data-translate="categoryAccessories" onclick="filterMajorCategory('Accessories')">Accessories</button>
+  </section>
+    
+
+    <!-- Add to product-catalog.html -->
+    <div class="product-controls">
+      <!-- Search with Autocomplete -->
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search products..."
+          data-translate="search_placeholder"
+          oninput="handleSearchInput(event)"
+        />
+        <div id="searchSuggestions" class="autocomplete-dropdown"></div>
+      </div>
+    
+      <!-- Sorting Dropdown -->
+      <select id="sortSelect" class="form-select" data-translate="sort_by">
+        <option value="price_asc" data-translate="price_low_high">Price: Low to High</option>
+        <option value="price_desc" data-translate="price_high_low">Price: High to Low</option>
+        <option value="newest" data-translate="newest">Newest Arrivals</option>
+        <option value="best_selling" data-translate="best_selling">Best Selling</option>
+        <option value="top_rated" data-translate="top_rated">Top Rated</option>
+      </select>
+    
+      <!-- Filters Section -->
+      <div class="filters">
+        <!-- Price Range -->
+        <div class="filter-group">
+          <label data-translate="price_range">Price Range:</label>
+          <div class="price-slider">
+            <input type="range" id="priceMin" min="0" max="1000" value="0" />
+            <input type="range" id="priceMax" min="0" max="1000" value="1000" />
+            <div class="price-values">
+              <span id="minPrice">$0</span> - <span id="maxPrice">$1000</span>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Brand Filter -->
+        <div class="filter-group">
+          <label data-translate="brands">Brands:</label>
+          <div id="brandFilters" class="brand-options">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+    
+        <!-- Size Filter -->
+        <div class="filter-group">
+          <label data-translate="sizes">Sizes:</label>
+          <div id="sizeFilters" class="size-options">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+    
+        <!-- Discount Filter -->
+        <div class="filter-group">
+          <label>
+            <input type="checkbox" id="discountFilter" />
+            <span data-translate="discounts_available">Discounts Available</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      <div id="catalogGrid" class="catalog-grid">
+      <!-- Product tiles will be inserted here dynamically -->
+    </div>
+  </section>
+
+<!-- Quick View Modal -->
+<div id="quickViewModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="modal-product-details">
+      <!-- <img src="" alt="Product Quick View" class="modal-product-image" /> -->
+      <div class="modal-info">
+        <h3 class="modal-product-title">Product Title</h3>
+        <p class="modal-price">$XX.XX</p>
+        <p class="modal-brand">Brand</p>
+        <p class="modal-description">Product description goes here.</p>
+        <div class="modal-ratings">
+          ★★★★☆
+          <span class="modal-rating-value">4.0</span>
+        </div>
+        <div class="modal-buttons">
+          <button class="view-details-btn" data-translate="modalViewDetails">
+            View Details
+          </button>
+          <!-- Add this new button -->
+          <button class="add-to-cart-btn" data-translate="modalAddToCart">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+
+ <!-- Footer -->
+ <footer class="footer bg-dark text-light py-5">
+  <div class="container">
+    <div class="row">
+      <!-- About Section -->
+      <div class="col-md-4">
+        <h5 class="text-uppercase mb-4">About TrendHive</h5>
+        <p>
+          TrendHive is your go-to destination for fashion-forward styles and timeless elegance. We redefine fashion with innovation and sustainability.
+        </p>
+        <p>&copy; 2023 TrendHive. All Rights Reserved.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-2">
+        <h5 class="text-uppercase mb-4">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#faq" class="text-light text-decoration-none">FAQ</a></li>
+          <li><a href="#contact" class="text-light text-decoration-none">Contact Us</a></li>
+          <li><a href="#about" class="text-light text-decoration-none">About Us</a></li>
+          <li><a href="#blog" class="text-light text-decoration-none">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Customer Support -->
+      <div class="col-md-3">
+        <h5 class="text-uppercase mb-4">Customer Support</h5>
+        <ul class="list-unstyled">
+          <li><a href="terms.html" class="text-light text-decoration-none">Terms & Conditions</a></li>
+          <li><a href="privacy.html" class="text-light text-decoration-none">Privacy Policy</a></li>
+          <li><a href="returns.html" class="text-light text-decoration-none">Returns & Refunds</a></li>
+          <li><a href="shipping.html" class="text-light text-decoration-none">Shipping Info</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Signup -->
+      <div class="col-md-3">
+        <h5 class="text-uppercase mb-4">Stay Connected</h5>
+        <form>
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Enter your email"
+              aria-label="Email"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+        </form>
+        <div class="social-icons mt-4">
+          <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="#" class="text-light me-3"><i class="fab fa-instagram fa-lg"></i></a>
+          <a href="#" class="text-light me-3"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-linkedin fa-lg"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4 text-light" />
+    <div class="text-center">
+      <p class="mb-0">Designed with ❤️ by TrendHive Team</p>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+{
+  "products": [
+        {
+          "id": 1,
+          "category": "sneakers",
+          "majorGroup": "Footwear",
+          "minorGroup": "Sneakers",
+          "name": "Sneaker Model 1",
+          "price": "$79.99",
+          "brand": "BrandX",
+          "ratings": 4.0,
+          "images": {
+            "thumbnail": "img/deals/sneakers.jpeg",
+            "highres": "img/deals/sneakers.jpeg",
+            "alternate": "img/product/sneakers-removebg-preview.png"
+          },
+          "description": "High quality, comfortable sneakers for everyday wear.",
+          "specifications": {
+            "size": "7-12",
+            "material": "Synthetic/Leather",
+            "colorOptions": "White, Black, Blue"
+          },
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Great sneakers, comfortable for long walks!"
+            },
+            {
+              "rating": 4,
+              "comment": "Sleek design but a bit tight."
+            }
+          ],
+          "translationKey": "sneakerModel1"
+        },
+        {
+          "id": 2,
+          "category": "handbags",
+          "majorGroup": "Accessories",
+          "minorGroup": "Handbags",
+          "name": "Leather Shoulder Bag",
+          "price": "$49.99",
+          "brand": "BrandY",
+          "ratings": 5.0,
+          "images": {
+            "thumbnail": "img/deals/handbag.jpeg",
+            "highres": "img/product/handbag.png"
+          },
+          "description": "Elegant leather shoulder bag perfect for everyday use. Features a magnet buckle closure and a detachable inner zipper pouch.",
+          "specifications": {
+            "size": "One size",
+            "material": "Leather",
+            "colorOptions": "Tan, Black"
+          },
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Stylish and spacious."
+            }
+          ],
+          "translationKey": "leatherBag"
+        },
+        {
+          "id": 3,
+          "category": "dresses",
+          "majorGroup": "Apparel",
+          "minorGroup": "Dresses",
+          "name": "Floral Print Backless Sundress",
+          "price": "$119.99 - Save 30%",
+          "brand": "TrendHive",
+          "ratings": 4.5,
+          "description": "Lightweight summer dress featuring a vibrant floral pattern, backless design, and tie-shoulder details—perfect for warm days and summer outings.",
+          "images": {
+            "thumbnail": "img/product/prod1(front).jpeg",
+            "full": "img/product/prod1(back).jpeg"
+          },
+          "translationKey": "product1Title"
+        },
+        {
+          "id": 4,
+          "category": "hoodies",
+          "majorGroup": "Apparel",
+          "minorGroup": "Tops & Outerwear",
+          "name": "Oversized Hoodie",
+          "price": "$59.99 - Save 20%",
+          "brand": "TrendHive",
+          "ratings": 4.2,
+          "description": "Comfortable cotton oversized hoodie with a modern relaxed fit. Now available in both white and blue variants—ideal for layering and casual outings.",
+          "images": {
+            "thumbnail": "img/product/bluehoodie.jpeg",
+            "full": "img/product/bluehoodie.jpeg"
+          },
+          "translationKey": "product2Title"
+        },
+        {
+          "id": 5,
+          "category": "jeans",
+          "majorGroup": "Apparel",
+          "minorGroup": "Bottomwear",
+          "name": "Baggy Skate Fit Jeans",
+          "price": "$49.99",
+          "brand": "SkatePro",
+          "ratings": 4.3,
+          "description": "Relaxed-fit jeans inspired by skate culture. Crafted for maximum comfort with a loose, baggy cut. Available in three color options.",
+          "images": {
+            "thumbnail": "img/product/Baggy_Skate_Fit_Jean(blue).webp",
+            "highres": "img/product/Baggy_Skate_Fit_Jean(darkblue).webp",
+            "alternate": "img/product/Baggy_Skate_Fit_Jean(gray).webp"
+          },
+          "specifications": {
+            "size": "S-XL",
+            "material": "Denim",
+            "colorOptions": "Blue, Dark Blue, Gray"
+          },
+          "reviews": [
+            {
+              "rating": 4,
+              "comment": "Comfortable and perfect for a casual skate look!"
+            }
+          ],
+          "translationKey": "baggySkateFitJeans"
+        },
+        {
+          "id": 6,
+          "category": "shorts",
+          "majorGroup": "Apparel",
+          "minorGroup": "Bottomwear",
+          "name": "Denim Shorts",
+          "price": "$39.99",
+          "brand": "TrendHive",
+          "ratings": 4.3,
+          "description": "Casual denim shorts with a modern cut. Featuring both front and back design details, these shorts are ideal for sunny days and laid-back style.",
+          "images": {
+            "thumbnail": "img/product/denimfront.jpeg",
+            "highres": "img/product/denimback.jpeg"
+          },
+          "specifications": {
+            "size": "S-XL",
+            "material": "Denim",
+            "colorOptions": "Blue"
+          },
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Great fit and very comfortable for summer vibes!"
+            }
+          ],
+          "translationKey": "denimShorts"
+        },
+        {
+          "id": 7,
+          "category": "tops",
+          "majorGroup": "Apparel",
+          "minorGroup": "Tops & Outerwear",
+          "name": "Ecru Crochet Shell Tank Top",
+          "price": "$29.99",
+          "brand": "TrendHive",
+          "ratings": 4.2,
+          "description": "Lightweight and breathable shell tank top with intricate crochet detailing. Its ecru hue makes it a versatile piece for layering or wearing on its own during warm weather.",
+          "images": {
+            "thumbnail": "img/product/Ecru_Crochet_Shell_Tank_Top.webp",
+            "highres": "img/product/Ecru_Crochet_Shell_Tank_Top(back).webp"
+          },
+          "specifications": {
+            "size": "S-XL",
+            "material": "Cotton",
+            "colorOptions": "Ecru"
+          },
+          "reviews": [
+            {
+              "rating": 4,
+              "comment": "Unique design and perfect for hot weather!"
+            }
+          ],
+          "translationKey": "ecruTankTop"
+        },
+        {
+          "id": 8,
+          "category": "tops",
+          "majorGroup": "Apparel",
+          "minorGroup": "Tops & Outerwear",
+          "name": "Flowing Linen Tunic Shirt",
+          "price": "$39.99",
+          "brand": "Sanibel",
+          "ratings": 4.5,
+          "description": "Lightweight and airy, this flowing linen tunic shirt embodies effortless summer style. Its relaxed, breezy design makes it perfect for warm days and outdoor occasions.",
+          "images": {
+            "thumbnail": "img/product/flowing-linen-tunic-shirt-sanibel-3.webp",
+            "highres": "img/product/flowing-linen-tunic-shirt-sanibel-3.webp"
+          },
+          "specifications": {
+            "size": "S-XL",
+            "material": "Linen",
+            "colorOptions": "Beige, White"
+          },
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Super comfortable and perfect for summer!"
+            },
+            {
+              "rating": 4,
+              "comment": "I love the breezy fabric and relaxed fit."
+            }
+          ],
+          "translationKey": "flowingLinenTunicShirt"
+        },
+        {
+          "id": 9,
+          "category": "hoodies",
+          "majorGroup": "Apparel",
+          "minorGroup": "Tops & Outerwear",
+          "name": "Classic Gray Hoodie",
+          "price": "$49.99",
+          "brand": "UrbanComfort",
+          "ratings": 4.3,
+          "description": "Modern and versatile, this gray hoodie offers a soft cotton blend fabric and a relaxed fit ideal for layering on cooler days. Its classic color makes it an everyday essential.",
+          "images": {
+            "thumbnail": "img/product/grayhoodie.jpeg",
+            "highres": "img/product/grayhoodie.jpeg"
+          },
+          "specifications": {
+            "size": "S-XXL",
+            "material": "Cotton Blend",
+            "colorOptions": "Gray"
+          },
+          "reviews": [
+            {
+              "rating": 4,
+              "comment": "Really cozy and fits perfectly for casual outings."
+            }
+          ],
+          "translationKey": "classicGrayHoodie"
+        },
+        {
+          "id": 10,
+          "category": "handbags",
+          "majorGroup": "Accessories",
+          "minorGroup": "Handbags",
+          "name": "Classic White Handbag",
+          "price": "$69.99",
+          "brand": "ElegantCarry",
+          "ratings": 4.5,
+          "description": "Sleek and minimalist, this white handbag is designed for both style and functionality. Crafted with premium materials, it’s perfect for carrying your daily essentials in a chic way.",
+          "images": {
+            "thumbnail": "img/product/handbag.png",
+            "highres": "img/product/handbag.png"
+          },
+          "specifications": {
+            "size": "One Size",
+            "material": "Faux Leather",
+            "colorOptions": "White"
+          },
+          "reviews": [
+            {
+              "rating": 5,
+              "comment": "Elegant and spacious—a perfect accessory for every outfit."
+            }
+          ],
+          "translationKey": "classicWhiteHandbag"
+        },
+    {
+      "id": 11,
+      "category": "vests",
+      "majorGroup": "Apparel",
+      "minorGroup": "Tops & Outerwear",
+      "name": "Jersey Ribbed Vest",
+      "price": "$34.99",
+      "brand": "EssentialWear",
+      "ratings": 4.2,
+      "description": "A versatile ribbed vest crafted from a comfortable cotton blend. Its modern cut and sleek ribbed design make it a great layering piece for a street-ready look.",
+      "images": {
+        "thumbnail": "img/product/Jersey-Ribbed-Vest.avif",
+        "highres": "img/product/Jersey-Ribbed-Vest.avif",
+        "alternate": "img/product/Jersey-Ribbed-Vest (back).avif"
+      },
+      "specifications": {
+        "size": "S-XL",
+        "material": "Cotton Blend",
+        "colorOptions": "Black"
+      },
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Great for layering, and the ribbed texture is very on-trend."
+        }
+      ],
+      "translationKey": "jerseyRibbedVest"
+    },
+    {
+      "id": 12,
+      "category": "jeans",
+      "majorGroup": "Apparel",
+      "minorGroup": "Bottomwear",
+      "name": "Levi's Loose Straight Jeans",
+      "price": "$59.99",
+      "brand": "Levi's",
+      "ratings": 4.4,
+      "description": "These loose straight jeans offer a relaxed yet stylish fit. Made with premium denim, they provide durability and comfort—perfect for a modern, laid-back look.",
+      "images": {
+        "thumbnail": "img/product/Levi_ Loose_Straight_jeans.jpeg",
+        "highres": "img/product/Levi_Loose_Straight_jeans.jpeg"
+      },
+      "specifications": {
+        "size": "28-38",
+        "material": "Denim",
+        "colorOptions": "Blue"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Excellent quality; very comfortable and stylish."
+        }
+      ],
+      "translationKey": "levisLooseStraightJeans"
+    },
+    {
+      "id": 13,
+      "category": "jeans",
+      "majorGroup": "Apparel",
+      "minorGroup": "Bottomwear",
+      "name": "Levi's Super Baggy Men's Jeans",
+      "price": "$69.99",
+      "brand": "Levi's",
+      "ratings": 4.1,
+      "description": "Embrace a bold, street-inspired style with these super baggy jeans. Designed for a relaxed, oversized fit, they deliver both comfort and a distinctive urban look.",
+      "images": {
+        "thumbnail": "img/product/levi_Super_Baggy_Men's_Jeans.jpeg",
+        "highres": "img/product/levi_Super_Baggy_Men's_Jeans.jpeg",
+        "alternate": "img/product/levi_Super_Baggy_Men's_Jeans(back).jpeg"
+      },
+      "specifications": {
+        "size": "M-XXL",
+        "material": "Denim",
+        "colorOptions": "Blue (Faded)"
+      },
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Really comfortable with a cool, baggy fit that's perfect for urban street style."
+        }
+      ],
+      "translationKey": "levisSuperBaggyMensJeans"
+    },
+    {
+      "id": 14,
+      "category": "shirts",
+      "majorGroup": "Apparel",
+      "minorGroup": "Tops & Outerwear",
+      "name": "Casual Blue Printed Shirt",
+      "price": "$34.99",
+      "brand": "UrbanStyle",
+      "ratings": 4.2,
+      "description": "A relaxed-fit casual shirt with a trendy blue print, perfect for an everyday look that exudes a cool, laid-back vibe.",
+      "images": {
+        "thumbnail": "img/product/Voyager_Shirt(Aqua).webp",
+        "highres": "img/product/Voyager_Shirt(coral).webp"
+      },
+      "specifications": {
+        "size": "S-XL",
+        "material": "Cotton",
+        "colorOptions": "Blue, Multi-color"
+      },
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Very soft fabric and a comfortable fit."
+        }
+      ],
+      "translationKey": "casualBluePrintedShirt"
+    },
+    {
+      "id": 15,
+      "category": "dresses",
+      "majorGroup": "Apparel",
+      "minorGroup": "Dresses",
+      "name": "Polka Dot Swing Dress",
+      "price": "$89.99",
+      "brand": "ChicVibe",
+      "ratings": 4.6,
+      "description": "A playful swing dress featuring a classic polka dot pattern—perfect for summer outings, brunches, and adding a retro touch to your wardrobe.",
+      "images": {
+        "thumbnail": "img/product/polka-dot-swing-dress-thumb.jpg",
+        "highres": "img/product/polka-dot-swing-dress.jpg"
+      },
+      "specifications": {
+        "size": "XS-XL",
+        "material": "Cotton Blend",
+        "colorOptions": "Red, Black, White"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "The dress is flattering with a fun, retro vibe!"
+        }
+      ],
+      "translationKey": "polkaDotSwingDress"
+    },
+    {
+      "id": 16,
+      "category": "long sleeve tees",
+      "majorGroup": "Apparel",
+      "minorGroup": "Tops & Outerwear",
+      "name": "Basic Long Sleeve Tee",
+      "price": "$19.99",
+      "brand": "EssentialTees",
+      "ratings": 4.0,
+      "description": "A soft and comfortable long sleeve tee with a minimalist design—perfect for layering or keeping it simple on its own.",
+      "images": {
+        "thumbnail": "img/product/Puma_F1_Oversized_Long_Sleeve_Tee.webp",
+        "highres": "img/product/Puma_F1_Oversized_Long_Sleeve_Tee(green).webp"
+      },
+      "specifications": {
+        "size": "S-XL",
+        "material": "Cotton",
+        "colorOptions": "White, Black, Gray"
+      },
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "Great value for everyday wear."
+        }
+      ],
+      "translationKey": "basicLongSleeveTee"
+    },
+    {
+      "id": 17,
+      "category": "hoodies",
+      "majorGroup": "Apparel",
+      "minorGroup": "Tops & Outerwear",
+      "name": "Zip-up Hoodie",
+      "price": "$54.99",
+      "brand": "UrbanEdge",
+      "ratings": 4.4,
+      "description": "A stylish zip-up hoodie that offers a modern twist to the classic design. Featuring a soft interior and adjustable drawstrings, it's perfect for both casual and athletic outings.",
+      "images": {
+        "thumbnail": "img/product/Star_Zip-Up_Hoodie_Sweatshirt(black).webp",
+        "highres": "img/product/Star_Zip-Up_Hoodie_Sweatshirt(black).webp"
+      },
+      "specifications": {
+        "size": "S-XXL",
+        "material": "Cotton Blend",
+        "colorOptions": "Black, Gray, Navy"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "The zip-up feature is very convenient and fits perfectly."
+        }
+      ],
+      "translationKey": "zipupHoodie"
+    },
+    {
+      "id": 18,
+      "category": "sneakers",
+      "majorGroup": "Footwear",
+      "minorGroup": "Sneakers",
+      "name": "Sporty Runner Sneaker",
+      "price": "$89.99",
+      "brand": "FastTrack",
+      "ratings": 4.5,
+      "description": "Combining athletic performance with street style flair, these sneakers are ideal for running errands or an easy jog. Their lightweight design and breathable mesh make them both functional and stylish.",
+      "images": {
+        "thumbnail": "img/product/air-max-270-shoes-2V5C4p.png",
+        "highres": "img/product/air-max-270-shoes-2V5C4p.png"
+      },
+      "specifications": {
+        "size": "7-13",
+        "material": "Mesh & Synthetic",
+        "colorOptions": "Red, Black, White"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Very comfortable and perfect for my daily runs!"
+        }
+      ],
+      "translationKey": "sportyRunnerSneaker"
+    },
+    {
+      "id": 19,
+      "category": "shirts",
+      "majorGroup": "Apparel",
+      "minorGroup": "Tops & Outerwear",
+      "name": "Voyager Patterned Shirt",
+      "price": "$39.99",
+      "brand": "Voyager",
+      "ratings": 4.4,
+      "description": "Experience adventure in style with the Voyager Patterned Shirt. Featuring unique, vibrant patterns in Aqua, Coral, Black, and Gray, this casual button-up is perfect for those who love standout yet refined style.",
+      "images": {
+        "thumbnail": "img/product/Voyager_Shirt.webp",
+        "highres": "img/product/Voyager_Shirt.webp",
+        "alternate": [
+          "img/product/Voyager_Shirt(Aqua).webp",
+          "img/product/Voyager_Shirt(coral).webp",
+          "img/product/Voyager_Shirt(black).webp",
+          "img/product/Voyager_Shirt(gray).webp"
+        ]
+      },
+      "specifications": {
+        "size": "S-XL",
+        "material": "Cotton",
+        "colorOptions": "Aqua, Coral, Black, Gray"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "The patterns are vibrant and eye-catching. Perfect for a casual outing!"
+        },
+        {
+          "rating": 4,
+          "comment": "Great quality fabric with true-to-picture colors."
+        }
+      ],
+      "translationKey": "voyagerPatternedShirt"
+    },
+    {
+      "id": 20,
+      "category": "hoodies",
+      "majorGroup": "Apparel",
+      "minorGroup": "Tops & Outerwear",
+      "name": "Classic White Hoodie",
+      "price": "$49.99",
+      "brand": "UrbanComfort",
+      "ratings": 4.5,
+      "description": "A crisp and clean classic white hoodie that provides both comfort and style. Ideal for layering and versatile enough for workouts or casual days out.",
+      "images": {
+        "thumbnail": "img/product/whitehoodie.jpeg",
+        "highres": "img/product/whitehoodie.jpeg",
+        "alternate": "img/product/whitehoodieb.png"
+      },
+      "specifications": {
+        "size": "S-XXL",
+        "material": "Cotton Blend",
+        "colorOptions": "White"
+      },
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Super soft, versatile, and a wardrobe essential."
+        },
+        {
+          "rating": 4,
+          "comment": "Perfect for workouts and casual wear alike."
+        }
+      ],
+      "translationKey": "classicWhiteHoodie"
+    }
+  ]
+}

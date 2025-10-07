@@ -1,17 +1,16 @@
 /* Global Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: #F5F5F5; /* Off-White */
-    color: #333;
-    line-height: 1.6;
-  }
-  a {
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #F5F5F5; /* Off-White */
+  color: #333;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}

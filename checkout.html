@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <!-- Load Stripe.js -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    .checkout-container {
+      max-width: 500px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    #card-element { 
+      margin: 1rem 0;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    #payment-button {
+      background: #6772e5;
+      color: white;
+      padding: 12px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout-container">
+    <h2>Checkout</h2>
+    <div id="cart-items">
+      <!-- Cart items will be dynamically inserted here -->
+    </div>
+    <form id="payment-form">
+      <div id="card-element">
+        <!-- Stripe card input will be inserted here -->
+      </div>
+      <button id="payment-button" type="submit">Pay Now</button>
+      <div id="card-errors" role="alert"></div>
+    </form>
+  </div>
+
+  <script>
+    // Load cart from localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartContainer = document.getElementById('cart-items');
+    let totalAmount = 0;
+
+    // Display cart items and calculate total
+    cart.forEach(item => {
+      cartContainer.innerHTML += `
+        <div class="cart-item">
+          <p>${item.name} - ${item.price} x ${item.quantity}</p>
+        </div>
+      `;
+      totalAmount += parseFloat(item.price.replace('$', '')) * item.quantity;
+    });
+
+    cartContainer.innerHTML += `<h3>Total: $${totalAmount.toFixed(2)}</h3>`;
+
+    // Initialize Stripe with your publishable key
+    const stripe = Stripe('pk_test_your_publishable_key_here');
+
+    // Set up Stripe Elements
+    const elements = stripe.elements();
+    const cardElement = elements.create('card');
+    cardElement.mount('#card-element');
+
+    // Handle form submission
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const { error, paymentMethod } = await stripe.createPaymentMethod({
+        type: 'card',
+        card: cardElement,
+      });
+
+      if (error) {
+        document.getElementById('card-errors').textContent = error.message;
+      } else {
+        // Send paymentMethod.id to your server
+        fetch('/create-payment-intent', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            paymentMethodId: paymentMethod.id,
+            amount: totalAmount * 100, // Amount in cents
+            cart: cart
+          }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Payment successful!');
+            localStorage.removeItem('cart'); // Clear cart
+            window.location.href = 'order-confirmation.html';
+          } else {
+            alert('Payment failed: ' + data.error);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

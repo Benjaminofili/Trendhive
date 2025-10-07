@@ -41,3 +41,17 @@
       right: 100%; /* Changed from left: 100% */
     }
   }
+
+  @media (min-width: 768px) {
+    .carousel-item img {
+      height: 500px; /* Taller images for tablets and laptops */
+      object-fit: cover; /* Ensures the full image is shown */
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .carousel-item img {
+      height: 600px; /* Maximum height for larger screens */
+      object-fit: contain; /* Maintains the entire image visibility */
+    }
+  }

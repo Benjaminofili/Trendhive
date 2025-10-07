@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrendHive - Gallery</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for social icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-<YOUR-INTEGRITY-HASH>"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="vary.css" />
+    <style>
+      .gallery-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        padding: 2rem;
+        background: var(--clr-neutral);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+      }
+
+      /* Gallery Items */
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: var(--shadow-hover);
+      }
+
+      /* Gallery Images */
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item img:hover {
+        transform: scale(1.1);
+      }
+
+      /* Image Overlay */
+      .gallery-item .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: var(--clr-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .gallery-item:hover .overlay {
+        opacity: 1;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .gallery-container {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .gallery-container {
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+        }
+      }
+      /* Fullscreen Modal */
+      .fullscreen-modal {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+      }
+
+      .fullscreen-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-hover);
+      }
+
+      /* Navigation Buttons */
+      .prev-btn,
+      .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: var(--clr-white);
+        cursor: pointer;
+        z-index: 1050;
+      }
+
+      .prev-btn {
+        left: 5%;
+      }
+
+      .next-btn {
+        right: 5%;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        font-size: 2rem;
+        color: var(--clr-white);
+        cursor: pointer;
+        z-index: 1050;
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .prev-btn,
+        .next-btn {
+          font-size: 1.5rem;
+        }
+
+        .close-btn {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container-fluid">
+        <!-- Brand with translation -->
+        <a
+          class="navbar-brand"
+          href="home.html"
+          id="brandName"
+          data-translate="brandName"
+        >
+          TrendHive
+        </a>
+
+        <!-- Hamburger Menu -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible Content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- Navigation Links with translation -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="home.html"
+                id="navHome"
+                data-translate="navHome"
+                >Home</a
+              >
+            </li>
+
+            <!-- Shop Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                id="navShop"
+                data-translate="navShop"
+              >
+                Shop
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="product-catalog.html"
+                    id="dropdownCategories"
+                    data-translate="dropdownCategories"
+                    >Categories</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="wishlist.html"
+                    id="dropdownWishlist"
+                    data-translate="dropdownWishlist"
+                    >Wishlist</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="offers.html"
+                    id="dropdownOffers"
+                    data-translate="dropdownOffers"
+                    >Offers</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Explore Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                id="navExplore"
+                data-translate="navExplore"
+              >
+                Explore
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="gallery.html"
+                    id="dropdownGallery"
+                    data-translate="dropdownGallery"
+                    >Gallery</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="blog.html"
+                    id="dropdownBlog"
+                    data-translate="dropdownBlog"
+                    >Blog</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <!-- Info Dropdown -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                id="navInfo"
+                data-translate="navInfo"
+              >
+                Info
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="about.html"
+                    id="dropdownAbout"
+                    data-translate="dropdownAbout"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="contact.html"
+                    id="dropdownContact"
+                    data-translate="dropdownContact"
+                    >Contact Us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#faq"
+                    id="dropdownFAQ"
+                    data-translate="dropdownFAQ"
+                    >FAQ</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Right-aligned Items -->
+          <div class="d-flex align-items-center gap-3 flex-wrap">
+            <!-- Search Form -->
+            <form
+              class="d-flex order-1"
+              role="search"
+              style="min-width: 150px; flex-grow: 1"
+            >
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                id="searchInput"
+              />
+              <button class="btn" type="submit" id="searchButton">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
+
+            <!-- Right-aligned Items -->
+            <div
+              class="d-flex align-items-center gap-2 order-3 order-lg-2 mt-2 mt-sm-0"
+            >
+              <!-- Language Selector -->
+              <select
+                class="form-select custom-language-select"
+                id="languageSelect"
+              >
+                <option value="en">EN</option>
+                <option value="es">ES</option>
+                <option value="fr">FR</option>
+              </select>
+
+              <!-- Theme Toggle -->
+              <img
+                src="img/icons/moon2.png"
+                alt="Theme toggle"
+                id="icon"
+                class="theme-toggle"
+              />
+
+              <!-- Profile Icon -->
+              <a href="profile.html" class="user-profile">
+                <img
+                  src="img/icons/profile.png"
+                  alt="Profile"
+                  class="profile-icon"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+      <nav aria-label="breadcrumb" class="breadcrumb-container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="home.html" data-translate="breadcrumbHome">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page" data-translate="breadcrumbGallery">Gallery</li>
+        </ol>
+      </nav>
+      
+      <div class="gallery-container">
+        <!-- Gallery Items Dynamically added  -->
+      </div>
+    </main>
+
+    <!-- Fullscreen Modal -->
+    <div class="fullscreen-modal" id="fullscreenModal">
+      <i class="fas fa-times close-btn" id="closeModal"></i>
+      <i class="fas fa-chevron-left prev-btn" id="prevImage"></i>
+      <img src="" alt="Gallery Image" id="fullscreenImage" />
+      <i class="fas fa-chevron-right next-btn" id="nextImage"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-light py-5">
+      <div class="container">
+        <div class="row">
+          <!-- About Section -->
+          <div class="col-md-4">
+            <h5 class="text-uppercase mb-4">About TrendHive</h5>
+            <p>
+              TrendHive is your go-to destination for fashion-forward styles and
+              timeless elegance. We redefine fashion with innovation and
+              sustainability.
+            </p>
+            <p>&copy; 2023 TrendHive. All Rights Reserved.</p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-2">
+            <h5 class="text-uppercase mb-4">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#faq" class="text-light text-decoration-none">FAQ</a>
+              </li>
+              <li>
+                <a href="#contact" class="text-light text-decoration-none"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="text-light text-decoration-none"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#blog" class="text-light text-decoration-none">Blog</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Customer Support -->
+          <div class="col-md-3">
+            <h5 class="text-uppercase mb-4">Customer Support</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="terms.html" class="text-light text-decoration-none"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a href="privacy.html" class="text-light text-decoration-none"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="returns.html" class="text-light text-decoration-none"
+                  >Returns & Refunds</a
+                >
+              </li>
+              <li>
+                <a href="shipping.html" class="text-light text-decoration-none"
+                  >Shipping Info</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter Signup -->
+          <div class="col-md-3">
+            <h5 class="text-uppercase mb-4">Stay Connected</h5>
+            <form>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                  aria-label="Email"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary w-100">
+                Subscribe
+              </button>
+            </form>
+            <div class="social-icons mt-4">
+              <a href="#" class="text-light me-3"
+                ><i class="fab fa-facebook fa-lg"></i
+              ></a>
+              <a href="#" class="text-light me-3"
+                ><i class="fab fa-instagram fa-lg"></i
+              ></a>
+              <a href="#" class="text-light me-3"
+                ><i class="fab fa-twitter fa-lg"></i
+              ></a>
+              <a href="#" class="text-light"
+                ><i class="fab fa-linkedin fa-lg"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4 text-light" />
+        <div class="text-center">
+          <p class="mb-0">Designed with ❤️ by TrendHive Team</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Gallery Images
+      // Gallery Images
+      const galleryImages = [
+        "img/gallery/pexels-marleneleppanen-1183266.jpg",
+        "img/gallery/pexels-godisable-jacob-226636-965324.jpg",
+        "img/gallery/woman-6670772_1280.jpg",
+        "img/gallery/woman-4390055_1280.jpg",
+        "img/gallery/dami-adebayo-k6aQzmIbR1s-unsplash.jpg",
+        "img/gallery/sirio-7_ZNLVlJchs-unsplash.jpg",
+        "img/gallery/mike-von-YsiSAp3ccvk-unsplash.jpg",
+        "img/gallery/mohamadreza-khashay-xwMYVKN14Ok-unsplash.jpg",
+        "img/gallery/raamin-ka-uR51HXLO7G0-unsplash.jpg",
+        "img/gallery/brooke-cagle-dGK3ynaDNCI-unsplash.jpg",
+        "img/gallery/judeus-samson-0UECcInuCR4-unsplash.jpg",
+        "img/gallery/darko-mitev-c5t_j1zlk1Y-unsplash.jpg",
+        "img/gallery/katsiaryna-endruszkiewicz-BteCp6aq4GI-unsplash.jpg",
+      ];
+
+      const galleryGrid = document.querySelector(".gallery-container");
+      const fullscreenModal = document.getElementById("fullscreenModal");
+      const fullscreenImage = document.getElementById("fullscreenImage");
+      const closeModal = document.getElementById("closeModal");
+      const prevImage = document.getElementById("prevImage");
+      const nextImage = document.getElementById("nextImage");
+
+      let currentImageIndex = 0;
+
+      // Populate Gallery
+      galleryImages.forEach((image, index) => {
+        const galleryItem = document.createElement("div");
+        galleryItem.classList.add("gallery-item");
+        galleryItem.innerHTML = `
+    <img src="${image}" alt="Gallery Image ${index + 1}" loading="lazy" />
+    <div class="overlay">View Image</div>
+  `;
+        galleryItem.addEventListener("click", () => openFullscreen(index));
+        galleryGrid.appendChild(galleryItem);
+      });
+
+      // Open Fullscreen Modal
+      function openFullscreen(index) {
+        currentImageIndex = index;
+        fullscreenImage.src = galleryImages[currentImageIndex];
+        fullscreenModal.style.display = "flex";
+      }
+
+      // Close Fullscreen Modal
+      closeModal.addEventListener("click", () => {
+        fullscreenModal.style.display = "none";
+      });
+
+      // Navigate to Previous Image
+      prevImage.addEventListener("click", () => {
+        currentImageIndex =
+          (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        fullscreenImage.src = galleryImages[currentImageIndex];
+      });
+
+      // Navigate to Next Image
+      nextImage.addEventListener("click", () => {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        fullscreenImage.src = galleryImages[currentImageIndex];
+      });
+
+      // Close Modal on Outside Click
+      fullscreenModal.addEventListener("click", (event) => {
+        if (event.target === fullscreenModal) {
+          fullscreenModal.style.display = "none";
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
